@@ -45,7 +45,15 @@ app.post('/write', (req, res) => {
         range: 'Page1!A2:E2',
         valueInputOption: 'RAW',
         requestBody: {
-            values: [[name||"",email||"",linkUpload||"",linkYoutube||"",message||""]],
+            values: [[
+                {
+                    Name:name||"",
+                    Email:email||"",
+                    linkUpload:linkUpload||"",
+                    linkYoutube:linkYoutube||"",
+                    message:message||""
+                }
+            ]],
             
         },
     });
