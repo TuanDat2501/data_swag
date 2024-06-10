@@ -36,10 +36,11 @@ app.post('/write', (req, res) => {
     const {name,email,linkUpload,linkYoutube,message}=req.body
     const response = sheets.spreadsheets.values.append({
         spreadsheetId: "1FGkk4LScYui8RuiGCgGMt-GREZuG9SDgKwhwyXaaFXc",
-        range: 'A1:E1',
-        valueInputOption: 'USER_ENTERED',
+        range: 'Page1!A2:E2',
+        valueInputOption: 'RAW',
         requestBody: {
             values: [[name||"",email||"",linkUpload||"",linkYoutube||"",message||""]],
+            
         },
     });
     const data = "Writing data to Google Sheet succeeds!"
